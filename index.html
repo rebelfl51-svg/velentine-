@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine 💖</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffd6e8, #ffb3d9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  width: 90%;
+  max-width: 350px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.cat {
+  font-size: 60px;
+}
+
+h2 {
+  color: #ff4d88;
+  margin: 10px 0 20px;
+}
+
+.buttons {
+  margin-top: 30px;
+  position: relative;
+  height: 120px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#yes {
+  background: #ff4d88;
+  color: white;
+}
+
+#no {
+  background: #ffd6e8;
+  color: #ff4d88;
+  position: absolute;
+  left: 55%;
+  top: 0;
+}
+
+.final-message {
+  display: none;
+  font-size: 20px;
+  color: #ff2f75;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="cat">🐱</div>
+
+  <h2 id="question">hey! can you be my valentine 💕</h2>
+
+  <div class="buttons" id="btnBox">
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 🙈</button>
+  </div>
+
+  <div class="final-message" id="final">
+    now we're going on a date on 14th 🌹
+  </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const btnBox = document.getElementById("btnBox");
+const yesBtn = document.getElementById("yes");
+
+noBtn.addEventListener("touchstart", moveNo);
+noBtn.addEventListener("mouseover", moveNo);
+
+function moveNo() {
+  const boxWidth = btnBox.clientWidth - noBtn.clientWidth;
+  const boxHeight = btnBox.clientHeight - noBtn.clientHeight;
+
+  const x = Math.random() * boxWidth;
+  const y = Math.random() * boxHeight;
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
+
+yesBtn.onclick = () => {
+  document.getElementById("question").style.display = "none";
+  btnBox.style.display = "none";
+  document.getElementById("final").style.display = "block";
+};
+</script>
+
+</body>
+</html><!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+    Hello, World!
+  </h1>
+</body>
+</html>
